@@ -1,0 +1,290 @@
+html {
+    font-family: helvetica; /* Make the page not eye-grating. */
+}
+
+body{
+	display:grid;
+	grid:
+	"top-bar top-bar top-bar" auto
+	"page-content" 1fr
+	"after-smash" auto
+	"bottom-bar" auto
+	/ auto 1fr auto auto;
+	gap: 8px;
+	height:70vh;
+	background-color:#f2e8c6;
+}
+
+#top-bar { /* Page title. */
+	background-color: #d80032;
+	text-align:center;
+	height:auto;
+	border-radius:10px;
+}
+
+#top-bar h1 { /* Title. */
+	margin:1px;
+	padding-bottom:0px;
+	font-size:2.5em;
+	color:#ffffff;
+}
+
+#top-bar p { /* Splash text. */
+	margin-top:0px;
+	padding-top:0px;
+	font-size:0.8em;
+}
+
+#page-content { /* The presented choice. */
+	/*background-color: blue; */
+	height:50vh;
+	min-height:400px;
+	display:flex;
+	align-items:center;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+
+#page-content img { /* All images from PokeAPI will be 475x475. */
+	max-width:300px;
+	max-height:300px;
+	object-fit:contain;
+}
+
+/* We've got you surrounded! Come drink your flexbox syrup! */
+
+#page-content button {
+	background-color:#ffffff;
+    color:#000000;
+	border-color:#d80032;
+	border-radius:10px;
+	border-style:solid;
+	width:120px;
+	height:40px;
+	transition-duration:0.3s;
+}
+#page-content button:hover {
+	background-color: #d80032;
+	color:white;
+	box-shadow: 0 6px 6px 0 #999999;
+	cursor:pointer;
+}
+#page-content button:active {
+	background-color: #d80032;
+	color:white;
+	box-shadow: 0 4px 4px 0 #999999;
+	transform: translateY(4px);
+	cursor:pointer;
+}
+
+/* I HATE CSS DESIGN! I HATE CSS DESIGN! */
+
+#page-content button.button-selected {
+    background-color: #d80032;
+	color:white;
+	box-shadow: 0 6px 6px 0 #999999;
+    cursor: not-allowed;
+    transform:translateY(0px);
+}
+#page-content button.button-selected:hover {
+    background-color: #d80032;
+	color:white;
+	box-shadow: 0 6px 6px 0 #999999;
+    cursor: not-allowed;
+    transform:translateY(0px);
+}
+#page-content button.button-selected:active {
+    background-color: #d80032;
+	color:white;
+	box-shadow: 0 6px 6px 0 #999999;
+    cursor: not-allowed;
+    transform:translateY(0px);
+}
+#page-content button.button-unselected {
+    background-color:#ffffff;
+    color:#000000;
+    opacity: 0.5;
+    box-shadow: 0 0 0 0 #ffffff;
+    transform:translateY(0px);
+	cursor: not-allowed;
+}
+#page-content button.button-unselected:hover {
+    background-color:#ffffff;
+    color:#000000;
+    opacity: 0.5;
+    box-shadow: 0 0 0 0 #ffffff;
+    transform:translateY(0px);
+	cursor: not-allowed;
+}
+#page-content button.button-unselected:active {
+    background-color:#ffffff;
+    color:#000000;
+    opacity: 0.5;
+    box-shadow: 0 0 0 0 #ffffff;
+    transform:translateY(0px);
+	cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+#or { /* The little "OR" between the two choices. */
+	float:left;
+	text-align:center;
+	width:10%;
+	background-color: #d80032;
+	border-radius:10px;
+}
+
+#pkmn-left { /* The candidate on the left. */
+	float:left;
+	text-align:center;
+	width:45%;
+}
+
+#pkmn-right { /* The candidate on the right. */
+	float:left;
+	text-align:center;
+	width:45%;
+}
+
+#after-smash { /* Only to be displayed after smashing. */
+/*	background-color: red; */
+    display:none;
+	text-align:center;
+	height:auto;
+/*	margin-top:2px;
+	padding-top:2px;
+    margin:0px;
+    padding:0px; */ /* what the FUCK */
+    
+}
+
+#after-smash button {
+    
+	background:transparent;
+	border-color:#d80032;
+	border-radius:8px;
+	border-style:solid;
+	width:200px;
+	height:35px;
+/*    margin:0px;
+    padding:0px; */
+	transition-duration:0.3s;
+}
+
+#after-smash button:hover {
+	background-color: #d80032;
+	color:white;
+	box-shadow: 0 6px 6px 0 #999999;
+	cursor:pointer;
+}
+
+#after-smash button:active {
+	background-color: #d80032;
+	color:white;
+	box-shadow: 0 4px 4px 0 #999999;
+	transform: translateY(4px);
+	cursor:pointer;
+}
+
+
+#bottom-bar { /* Page footer. */
+	background-color: #a73121;
+	text-align:center;
+	height:auto;
+	border-radius:7px;
+	position:absolute;
+	bottom:0;
+	left:5px;
+	width:99vw;
+}
+
+#bottom-bar p {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:1px;
+	color:#ffffff;
+}
+
+#bottom-bar span:hover {
+	transition-duration: 0.3s;
+	color:#000000;
+	cursor:pointer;
+}
+
+
+/* Stuff for the modal.*/
+#modal { /*Modal background.*/
+    display:none;
+    position:fixed;
+    z-index:10;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgba(0,0,0,0.5);
+}
+
+#modal-content{ /*Modal content.*/
+    background-color: #d80032;
+    margin:auto;
+    padding:20px;
+    border: 1px solid #ffffff;
+    width:75%;
+    border-radius: 16px;
+}
+
+#close { /* That little close button thing. */
+    color:#bbbbbb;
+    float:right;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+#close:hover {
+    color:#000000;
+    text-decoration:none;
+    cusror:pointer;
+}
+
+
+
+/*
+BULLSHIT FOR CHOOSING THINGS.
+*/
+
+button .button-selected { /* Button chosen by user. */
+    background-color: #d80032;
+	color:white;
+	box-shadow: 0 6px 6px 0 #999999;
+    cursor: not-allowed;
+}
+button .button-selected:hover {
+    
+}
+button .button-selected:active {
+    
+}
+
+button .button-unselected { /* Button not chosen by user. */
+    opacity: 0.75;
+	cursor: not-allowed;
+}
+button .button-unselected:hover {
+    
+}
+button .button-unselected:active {
+    
+}
+
+.text-selected {
+    color:green; /* unused */
+}
