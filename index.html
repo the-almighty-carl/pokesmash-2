@@ -1,0 +1,68 @@
+<!--
+index.html
+(not) copyright 2023 elliott black
+Made with love, adderall, and Sewer Idol Project.
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="css/styles.css" type="text/css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+        <script src="js/smash.js"></script> <!-- Code for stuff. -->
+	   <title>PokéSmash</title>
+    </head>
+    <body>
+        <!-- Title bar. -->
+        <div id="top-bar">
+            <h1>PokéSmash</h1>
+            <!-- "splash text" feature to be displayed under the title. May cut. -->
+            <p id="splash-text"><i>Your choice is...</i></p>
+        </div>
+        <!-- Content container. -->
+        <div id="page-content">
+            <!-- Left pokemon. -->
+            <div id="pkmn-left">
+                <img id="imgL" src="img/blank.png"> <!-- Image of pokemon. -->
+                <h2 id="titleL">Loading...</h2> <!-- Pokemon's name. -->
+                <button type="button" id="btn-smashL">SMASH</button> <!-- SMASH button. -->
+                <p id="entryL" hidden>0</p> <!-- Control value. -->
+            </div>
+            <!-- "or" -->
+            <div id="or">
+                <p><b><i>OR</i></b></p>
+            </div>
+            <!-- Left pokemon. -->
+            <div id="pkmn-right">
+                <img id="imgR" src="img/blank.png"> <!-- Image of pokemon. -->
+                <h2 id="titleR">Loading...</h2> <!-- Pokemon's name. -->
+                <button type="button" id="btn-smashR">SMASH</button> <!-- SMASH button. -->
+                <p id="entryR" hidden>0</p> <!-- Control value. -->
+            </div>
+        </div>
+        <!-- todo hidden <div> that has "share" and "try again!" buttons -->
+        <div id="after-smash">
+            <button id="btn-retry" type="button">Smash Again</button>
+        <!--    <button id="btn-share" type="button">Share</button> <!-- May cut. -->
+        </div>
+        <!-- Bottom bar -->
+        <div id="bottom-bar">
+            <!-- Retrieve a record of your prior shame from LocalStorage. May cut. -->
+			<!-- Disclaimer that will fail to prevent Nintendo from suing me. -->
+            <p><span id="btn-history">Past Smashes</span> | <span id="btn-disclaimer">View Disclaimer</span></p>
+        </div>
+
+        <!-- Attempt to create a modal for the history and disclaimer things. -->
+        
+            <div id="modal" class="modal">
+                <div id="modal-content">
+                    <span id="close">&times;</span>
+                    <div id="modal-text">hi im a modal</div>
+                </div>
+            </div>
+        
+    </body>
+</html>
